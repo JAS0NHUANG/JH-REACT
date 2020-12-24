@@ -9,7 +9,7 @@ export const getPosts = async (page) => {
   );
   const jsonData = await fetchAPI.json();
   jsonData.push({
-    totalPage: parseInt(fetchAPI.headers.get('x-total-count')),
+    totalPage: parseInt(fetchAPI.headers.get('x-total-count'), 10),
     currentPage: pageNumber,
   });
   return jsonData;
